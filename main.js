@@ -1,3 +1,12 @@
+const OPENWEATHER_API_KEY = window.OPENWEATHER_API_KEY
+
+const buildWeatherUrl = (queryParams) => {
+    if (!OPENWEATHER_API_KEY) {
+        console.warn("Missing OPENWEATHER_API_KEY. Set it in config.js.")
+    }
+    return `https://api.openweathermap.org/data/2.5/weather?${queryParams}&units=metric&appid=${OPENWEATHER_API_KEY}`
+}
+
 class GetPosition {
     app
     latitude;
@@ -14,7 +23,7 @@ class GetPosition {
 
         this.latitude = position.coords.latitude
         this.longitude = position.coords.longitude
-        this.link = `https://api.openweathermap.org/data/2.5/weather?lat=${this.latitude}&lon=${this.longitude}&units=metric&appid=8a490c6651725451fa03123bd0d7b472`
+        this.link = buildWeatherUrl(`lat=${this.latitude}&lon=${this.longitude}`)
 
         this.api = new GetDataFromApi()
         this.placeInfo(this.link)
@@ -212,7 +221,7 @@ class Search {
                 if(this.value === ''){
                     return;
                 }else{
-                    this.main.app.location.placeInfo("https://api.openweathermap.org/data/2.5/weather?q="+this.value+"&units=metric&appid=8a490c6651725451fa03123bd0d7b472")
+                    this.main.app.location.placeInfo(buildWeatherUrl(`q=${this.value}`))
                     this.search.value = ""
                     this.search.blur()
                 }
@@ -225,7 +234,7 @@ class Search {
         if(this.value === ''){
             return;
         }else{
-            this.main.app.location.placeInfo("https://api.openweathermap.org/data/2.5/weather?q="+this.value+"&units=metric&appid=8a490c6651725451fa03123bd0d7b472")
+            this.main.app.location.placeInfo(buildWeatherUrl(`q=${this.value}`))
             this.search.value = ""
         }
         
