@@ -1,0 +1,219 @@
+*, *::after, *::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 2rem;
+}
+
+@keyframes popUp {
+  from {
+    opacity: 0;
+    transform: translateY(0.5rem);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+body {
+  min-height: 100vh;
+  font-family: "Signika Negative", sans-serif;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+}
+
+.darkmode {
+  background: #393646;
+  color: #FFF4F4;
+}
+
+.main {
+  aspect-ratio: 1/1;
+  height: 35rem;
+  background: #FFF4F4;
+  border-radius: 0.5rem;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px 0px, rgba(0, 0, 0, 0.23) 0px 6px 6px 0px;
+  transition: 0.2s all;
+  animation-name: popUp;
+  animation-duration: 0.4s;
+  position: relative;
+  z-index: 1;
+}
+.main:active {
+  transform: scale(1);
+}
+
+.info {
+  width: 100%;
+  height: 100%;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 0.5rem;
+}
+.info__titleBox {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.info__titleBox > i {
+  font-size: 3rem;
+  transition: 0.2s all;
+}
+.info__titleBox > i:hover {
+  color: rgb(151, 146, 146);
+  cursor: pointer;
+}
+.info__titleBox > i:active {
+  transform: translateY(0.5rem);
+}
+.info__h1 {
+  font-size: 250%;
+  text-shadow: rgba(0, 0, 0, 0.3) 0px 0px 18px;
+}
+.info__temp {
+  font-size: 240%;
+  text-shadow: rgba(0, 0, 0, 0.3) 0px 0px 18px;
+}
+.info__status {
+  font-size: 90%;
+}
+.info__cloud {
+  width: 15rem;
+  aspect-ratio: 1/1;
+  position: relative;
+}
+.info__cloud--bottom {
+  position: absolute;
+  width: 15rem;
+  height: 4rem;
+  bottom: 0;
+  left: 0;
+  border-radius: 25rem;
+  background: grey;
+}
+.info__cloud--circle1 {
+  width: 5rem;
+  aspect-ratio: 1/1;
+  background: grey;
+  position: absolute;
+  border-radius: 50%;
+  top: 45%;
+  left: 10%;
+}
+.info__cloud--circle2 {
+  width: 3rem;
+  aspect-ratio: 1/1;
+  background: grey;
+  position: absolute;
+  border-radius: 50%;
+  top: 50%;
+  right: 26%;
+}
+.info__img {
+  width: 12.5rem;
+  aspect-ratio: 1/1;
+}
+
+.search {
+  opacity: 60%;
+  width: 100%;
+  height: 4rem;
+  border-radius: 0 0 1rem 1rem;
+  background: #FFF4F4;
+  z-index: -1;
+  position: absolute;
+  bottom: -3.725rem;
+  left: 0;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  gap: 1rem;
+  transition: 0.2s all;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+.search__field {
+  width: 20rem;
+  background: none;
+  border: none;
+  border-bottom: 0.15rem solid rgb(69, 114, 120);
+  color: rgb(27, 107, 147);
+  font-family: "Signika Negative", sans-serif;
+  font-size: 75%;
+  transition: 0.2s all;
+  position: relative;
+}
+.search__field:focus {
+  outline: none;
+  border-bottom: 0.3rem solid rgb(69, 114, 120);
+}
+.search__icon {
+  color: rgb(69, 114, 120);
+  transition: 0.2s all;
+}
+.search__icon:hover {
+  transform: translateY(0.25rem);
+  cursor: pointer;
+}
+.search:hover {
+  opacity: 1;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  font-size: 75%;
+  padding: 1rem;
+}
+.footer__contact {
+  color: black;
+  text-decoration: none;
+  position: relative;
+}
+.footer__contact:hover .footer__contactTooltip {
+  visibility: visible;
+  opacity: 1;
+}
+.footer__contactTooltip {
+  position: absolute;
+  top: -3rem;
+  left: 0;
+  background: rgba(255, 244, 244, 0.5215686275);
+  width: max-content;
+  height: max-content;
+  padding: 0.5rem;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.4s;
+  border-radius: 0.25rem;
+}
+.footer__contactTooltip::after {
+  content: "";
+  position: absolute;
+  bottom: -1rem;
+  left: 2rem;
+  width: 1rem;
+  height: 1rem;
+  border-left: 0.5rem solid transparent;
+  border-right: 0.5rem solid transparent;
+  border-top: 0.5rem solid rgba(255, 244, 244, 0.5215686275);
+}
+.footer__copyright {
+  padding-left: 0.5rem;
+}
+
+/*# sourceMappingURL=style.css.map */

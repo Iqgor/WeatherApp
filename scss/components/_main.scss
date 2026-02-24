@@ -1,0 +1,23 @@
+@use "../abstracts/colors";
+@use "../abstracts/mixins";
+@use "../abstracts/vars";
+
+.main {
+    aspect-ratio: 1/1;
+    height: 35rem;
+    background: colors.$boxColor;
+    border-radius: 0.5rem;
+    box-shadow: vars.$boxShadow;
+    transition: 0.2s all;
+    animation-name: popUp;
+    animation-duration: 0.4s;
+    position: relative;
+    z-index: 1;
+
+
+    &:active {
+        transform: scale(1);
+    }
+
+
+}

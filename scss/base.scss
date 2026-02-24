@@ -1,0 +1,14 @@
+@use './abstracts/colors';
+@use'./abstracts/mixins';
+@use "./abstracts/fonts";
+@use "./abstracts/animations";
+
+body {
+    min-height: 100vh;   
+    font-family: fonts.$font1;
+    width: 100%;
+    @include mixins.displayFlex;
+    flex-direction: column;
+    position: relative;
+    
+}

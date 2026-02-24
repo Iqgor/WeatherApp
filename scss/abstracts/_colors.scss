@@ -1,0 +1,11 @@
+@mixin gradientClear1 {
+    background: rgb(27, 107, 147);
+    background: linear-gradient(164deg, rgba(27, 107, 147, 1) 40%, rgba(79, 192, 208, 1) 100%);
+}
+@mixin gradientClear2 {
+    background: rgb(155,171,184);
+    background: linear-gradient(164deg, rgba(155,171,184,1) 40%, rgba(69,114,120,1) 100%);
+}
+
+$boxColor:#FFF4F4;
+$boxColor1:#fff4f485;

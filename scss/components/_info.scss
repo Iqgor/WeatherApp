@@ -1,0 +1,82 @@
+.info{
+    width: 100%;
+    height: 100%;
+    padding: 2rem ;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 0.5rem;
+
+    &__titleBox{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        &>i{
+            font-size: 3rem;
+            transition: 0.2s all;
+            &:hover{
+                color:rgb(151, 146, 146);
+                cursor: pointer;
+            }
+            &:active{
+                transform: translateY(0.5rem);
+            }
+        }
+    }
+
+    &__h1{
+        font-size: 250%;
+        text-shadow: rgba(0, 0, 0,0.3) 0px 0px 18px;    
+    }
+    
+    &__temp{
+        font-size: 240%;
+        text-shadow: rgba(0, 0, 0,0.3) 0px 0px 18px;    
+
+    }
+
+    &__status{
+        font-size: 90%;
+    }
+
+    &__cloud{
+        width: 15rem;
+        aspect-ratio: 1/1;
+        position: relative;
+        
+        &--bottom{
+            position: absolute;
+            width: 15rem;
+            height: 4rem;
+            bottom: 0;
+            left: 0;
+            border-radius: 25rem;
+            background: grey;
+        }
+        &--circle1{
+            width: 5rem;
+            aspect-ratio: 1/1;
+            background: grey;
+            position: absolute;
+            border-radius: 50%;
+            top: 45%;
+            left: 10%;
+        }
+        &--circle2{
+            width: 3rem;
+            aspect-ratio: 1/1;
+            background: grey;
+            position: absolute;
+            border-radius: 50%;
+            top: 50%;
+            right: 26%;
+        }
+    }
+
+    &__img{
+        width: 12.5rem;
+        aspect-ratio: 1/1;
+    }
+
+}
+
